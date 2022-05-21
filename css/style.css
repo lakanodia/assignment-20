@@ -1,0 +1,170 @@
+body{
+    background-color: rgb(56, 56, 59);
+    font-family: 'Comfortaa';
+}
+.header{
+    background-color: rgb(45, 45, 49);
+    box-shadow: 0px 5px 30px #7bf137;
+}
+/* .nav-block{
+    display: flex;
+	align-items: center;
+} */
+.header-block{
+    position: relative;
+	display: flex;
+	justify-content: space-between;
+    padding: 15px;
+}
+.ul-block{
+	display: flex;
+    margin-top: 10px;
+    transition: 0.5s linear;
+}
+.li-block{
+	margin-left: 30px ;
+	font-family: 'Comfortaa';
+	text-transform: uppercase;
+	font-weight: 900;
+    transition: 0.5s linear;
+}
+.a-li{
+	color: #7bf137;
+}
+.logo-style{
+	font-weight: 900;
+	color: #7bf137;
+    font-size: 30px;	
+}
+.burger-child{
+    width: 40px;
+    height: 5px;
+    background-color: #7bf137;
+    margin-top: 5px;
+    border-radius: 7px;
+    transition: 0.5s linear;
+}
+
+.burger-bar{
+    position: absolute;
+    top:30px;
+    transform: translateY(-50%);
+    right: 10px;
+    display: none;
+    cursor: pointer;
+    
+}
+
+
+/* Accordion */
+.title{
+    max-width: 500px;
+    width: 100%;
+    margin: 20px auto 30px auto;
+    color: rgb(213, 255, 165);
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+
+}
+
+.accordion-div{
+    max-width: 700px;
+    width: 100%;
+    margin: 30px auto;
+    position: relative;
+    background-color: #7bf13778;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 5px;
+}
+.accordion-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    font-size: 18px;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s linear;
+}
+
+.accordion-div.active .accordion-text{
+    height: 150px;
+}
+.accordion-div.active .accordion-title::before{
+    font-family: FontAwesome;
+    content: '\f106';
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.accordion-title{
+    position: relative;
+    padding: 20px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+}
+.accordion-div:hover{
+    border: solid;
+    border-color: #66c231;
+    box-shadow: 0px 2px 20px #66c231;
+}
+.accordion-title::before{
+    font-family: FontAwesome;
+    content: '\f107';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    font-size: 30px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.accordion-body{
+    margin-top: 50px;
+}
+
+
+
+@media(max-width:700px){
+    .nav-block{
+        display: none;
+    }
+    .burger-bar{
+        display: block;
+        margin-right: 30px;
+    }
+    .header-block{
+        flex-direction: column;
+    }
+    .ul-block{
+        flex-direction: column;
+        align-items: flex-end;
+        height: 150px;
+        margin-top: 30px;
+    }
+    .li-block{
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+    .nav-block.activeNavigation {
+        display: block;
+    }
+
+    .burger-child.middle{
+        display: none;
+        
+    }
+    .burger-child.top{
+        transform: rotate(-45deg) translate(-6px, 0px);
+        transition: 0.5s linear;
+    }
+    .burger-child.bottom{
+        transform: rotate(45deg) translate(-6px, 0px);
+        transition: 0.5s linear;
+    } 
+}
